@@ -6,6 +6,7 @@ import dev.su5ed.mffs.api.Projector;
 import dev.su5ed.mffs.api.module.Module;
 import dev.su5ed.mffs.blockentity.ForceFieldBlockEntity;
 import dev.su5ed.mffs.compat.CreateTrainCompat;
+import dev.su5ed.mffs.setup.ModModules;
 import dev.su5ed.mffs.setup.ModObjects;
 import dev.su5ed.mffs.util.BiometricIdentity;
 import dev.su5ed.mffs.util.ModUtil;
@@ -16,7 +17,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -116,6 +119,17 @@ public class ForceFieldBlockImpl extends Block implements ForceFieldBlock, Entit
         return Optional.ofNullable(level.getBlockEntity(pos))
             .map(be -> be instanceof ForceFieldBlockEntity f ? f.getClientBlockLight() : null)
             .orElseGet(() -> super.getLightEmission(state, level, pos));
+    }
+
+    @Override
+    public boolean canEntityDestroy(BlockState state, BlockGetter level, BlockPos pos, Entity entity) {
+        if (entity instanceof WitherBoss || entity instanceof WitherSkull) {
+            Projector projector = getProjector(level, pos).orElse(null);
+            if (projector != null) {
+                return !projector.hasModule(ModModules.REINFORCEMENT);
+            }
+        }
+        return super.canEntityDestroy(state, level, pos, entity);
     }
 
     @Override
