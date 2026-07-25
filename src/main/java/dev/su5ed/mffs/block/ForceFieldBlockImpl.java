@@ -49,6 +49,7 @@ public class ForceFieldBlockImpl extends Block implements ForceFieldBlock, Entit
     public static final BooleanProperty SOLID = BooleanProperty.create("solid");
     public static final BooleanProperty CAMOUFLAGED = BooleanProperty.create("camouflaged");
     public static final BooleanProperty REINFORCED = BooleanProperty.create("reinforced");
+    public static final ScopedValue<Boolean> EXPLOSION_COLLISION = ScopedValue.newInstance();
 
     public ForceFieldBlockImpl(Properties properties) {
         super(properties
@@ -155,6 +156,11 @@ public class ForceFieldBlockImpl extends Block implements ForceFieldBlock, Entit
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        // Block explosions
+        if (EXPLOSION_COLLISION.isBound()) {
+            return Shapes.block();
+        }
+
         return getProjector(level, pos)
             .map(projector -> {
                 if (context instanceof EntityCollisionContext entityContext && entityContext.getEntity() instanceof LivingEntity entity) {
