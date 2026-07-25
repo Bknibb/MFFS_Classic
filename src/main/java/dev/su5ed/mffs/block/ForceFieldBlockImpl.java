@@ -41,6 +41,7 @@ import java.util.Optional;
 
 public class ForceFieldBlockImpl extends Block implements ForceFieldBlock, EntityBlock {
     private static final VoxelShape COLLIDABLE_BLOCK = Shapes.create(0.01, 0.01, 0.01, 0.99, 0.99, 0.99);
+    public static final ThreadLocal<Boolean> EXPLOSION_COLLISION = ThreadLocal.withInitial(() -> false);
 
     public ForceFieldBlockImpl() {
         super(Properties.ofFullCopy(Blocks.GLASS)
@@ -134,6 +135,11 @@ public class ForceFieldBlockImpl extends Block implements ForceFieldBlock, Entit
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        // Block explosions
+        if (EXPLOSION_COLLISION.get()) {
+            return Shapes.block();
+        }
+
         return getProjector(level, pos)
             .map(projector -> {
                 if (context instanceof EntityCollisionContext entityContext && entityContext.getEntity() instanceof Player player) {
