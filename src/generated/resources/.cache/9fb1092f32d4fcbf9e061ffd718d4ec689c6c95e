@@ -1,4 +1,4 @@
-// 1.21.1	2026-07-25T12:23:49.545273	Recipes
+// 1.21.1	2026-07-26T13:17:50.013169	Recipes
 736794f5aac452d2a97b4e7496e7e27c4f8c379f data/mffs/advancement/recipes/misc/anti_friendly_module.json
 84094c7a57393bb72f7d4892e7c4418285f2bc2a data/mffs/advancement/recipes/misc/anti_hostile_module.json
 4904821c15dc125ceb77ed974a7668bd09053cc1 data/mffs/advancement/recipes/misc/anti_personnel_module.json
@@ -23,6 +23,7 @@ befc90148a502a02ba844249b642ef899f4cdf43 data/mffs/advancement/recipes/misc/cube
 4eeac29b34b7e9bab492dd4c3c8e5a16acffd0fa data/mffs/advancement/recipes/misc/frequency_card.json
 240f21b247ca6ab3a2f0f14d1c2ff23f5dec64e8 data/mffs/advancement/recipes/misc/fusion_module.json
 ddaa5012b10080013232d8a83ed1945357ce2dc8 data/mffs/advancement/recipes/misc/glow_module.json
+d9a9c4d187167a4a2f02101643539bd0baeac229 data/mffs/advancement/recipes/misc/handbook.json
 4502fd6ac7d4017f7c265fbc46c97de8eef1f28d data/mffs/advancement/recipes/misc/id_card.json
 ff77cf60467bf9d49ec963a902cb85850b490eec data/mffs/advancement/recipes/misc/interdiction_matrix.json
 f1729578ffce174b24354b67fea4f635d3690b8c data/mffs/advancement/recipes/misc/inverter_module.json
@@ -67,6 +68,7 @@ f478cb8f63829ee36e578e1029f18c76a025ae25 data/mffs/recipe/fortron_capacitor.json
 6c88f8993015ad1cd818e6a45a4fe4be4903c73f data/mffs/recipe/frequency_card.json
 35915d84af659a970972b1c61693f983c28b62de data/mffs/recipe/fusion_module.json
 3d5b56645389f8f1b36f380cf7cca66722d981bf data/mffs/recipe/glow_module.json
+d68f27e290f56fedc2d75bbffa4f1a9789ce0376 data/mffs/recipe/handbook.json
 31cc44e8e14f451da19b1ffd949df2e67033a3fb data/mffs/recipe/id_card.json
 b2da1dd1e35cbaa350e3ba1f9b47252fcdbf08b2 data/mffs/recipe/interdiction_matrix.json
 45262415ecc097c91c6ec55511939b0aa6a34f51 data/mffs/recipe/inverter_module.json

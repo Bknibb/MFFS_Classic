@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = MFFSMod.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = MFFSMod.MODID)
 public final class ModDataGen {
 
     @SubscribeEvent
@@ -40,8 +40,7 @@ public final class ModDataGen {
         generator.addProvider(event.includeServer(), new ItemTagsGen(output, registries, blockTags.contentsGetter(), helper));
         generator.addProvider(event.includeServer(), new RecipesGen(output, registries));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(
-            new LootTableProvider.SubProviderEntry(LootTableGen.ModBlockLoot::new, LootContextParamSets.BLOCK),
-            new LootTableProvider.SubProviderEntry(LootTableGen.ModItemLoot::new, LootContextParamSets.EMPTY)
+            new LootTableProvider.SubProviderEntry(LootTableGen.ModBlockLoot::new, LootContextParamSets.BLOCK)
         ), registries));
         generator.addProvider(event.includeServer(), new AdvancementProvider(output, registries, helper, List.of(new AdvancementsGen())));
         generator.addProvider(event.includeServer(), new DamageTypeTagsGen(output, registries, helper));

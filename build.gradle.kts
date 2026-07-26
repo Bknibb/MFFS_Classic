@@ -105,6 +105,10 @@ repositories {
         name = "TOP"
         url = uri("https://maven.k-4u.nl")
     }
+    maven {
+        name = "Modrinth"
+        url = uri("https://api.modrinth.com/maven")
+    }
     mavenCentral()
 }
 
@@ -119,6 +123,7 @@ dependencies {
 
     compileOnly(group = "mcjty.theoneprobe", name = "theoneprobe", version = versionTOP) { isTransitive = false }
     runtimeOnly("org.sinytra:item-asset-export-neoforge:1.0.2+1.21")
+    runtimeOnly("maven.modrinth:nU0bVIaL:BIogJv2D") // Patchouli
 }
 
 tasks {

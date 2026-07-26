@@ -1,15 +1,23 @@
 package dev.su5ed.mffs.datagen;
 
+import dev.su5ed.mffs.MFFSMod;
 import dev.su5ed.mffs.setup.ModItems;
 import dev.su5ed.mffs.setup.ModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -415,5 +423,20 @@ public class RecipesGen extends RecipeProvider {
             .pattern("PEP")
             .unlockedBy("has_focus_matrix", has(ModItems.FOCUS_MATRIX.get()))
             .save(recipeOutput, location("confiscation_module"));
+
+        if (ModList.get().isLoaded("patchouli")) {
+            Item book = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("patchouli", "guide_book"));
+            DataComponentType<ResourceLocation> component = (DataComponentType<ResourceLocation>) BuiltInRegistries.DATA_COMPONENT_TYPE
+                .get(ResourceLocation.fromNamespaceAndPath("patchouli", "book"));
+
+            ItemStack stack = new ItemStack(book);
+            stack.set(component, MFFSMod.location("handbook"));
+
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, stack)
+                .requires(Items.BOOK)
+                .requires(Items.IRON_INGOT)
+                .unlockedBy("has_book", has(Items.BOOK))
+                .save(recipeOutput.withConditions(new ModLoadedCondition("patchouli")), location("handbook"));
+        }
     }
 }
