@@ -22,6 +22,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.NeoForgeConditions;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -461,7 +462,7 @@ public class RecipesGen extends RecipeProvider {
                 .requires(Items.BOOK)
                 .requires(Items.IRON_INGOT)
                 .unlockedBy("has_book", has(Items.BOOK))
-                .save(this.output);
+                .save(this.output.withConditions(NeoForgeConditions.modLoaded("patchouli")));
         }
     }
 }
