@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 plugins {
     `maven-publish`
     id("net.neoforged.moddev") version "2.0.75"
-    id("me.modmuss50.mod-publish-plugin") version "0.5.+"
+    id("me.modmuss50.mod-publish-plugin") version "2.1.1"
     id("wtf.gofancy.git-changelog") version "1.1.+"
     id("org.moddedmc.wiki.toolkit") version "0.2.4"
 }
@@ -154,6 +154,8 @@ publishMods {
         projectId.set(curseForgeId)
         minecraftVersions.add(versionMc)
         displayName.set("MFFS $versionMc-${project.version}")
+        client.set(true)
+        server.set(true)
     }
     modrinth {
         accessToken.set(providers.environmentVariable("MODRINTH_TOKEN"))
