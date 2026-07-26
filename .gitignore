@@ -18,6 +18,8 @@ build
 .gradle
 
 # other
+.env
+.secrets
 eclipse
 run
 runs

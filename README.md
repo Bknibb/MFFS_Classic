@@ -36,18 +36,32 @@ field shapes, size scaling,
 position offset, and utility modules. For example, the upgrade to shock attacks, kill monsters, remove blocks, and
 protect tiles.
 
-Please report any bugs you find on our Issue Tracker found in this repository, or ask us in the discord if you're unsure.
+Please report any bugs you find on our Issue Tracker found in this repository, or ask us in the discord if you're
+unsure.
 
-### Contributing
+## Support
+
+We do our best to actively support in-demand versions and backport compatible changes where possible. While unsupported
+versions will not receive further updates from us maintainers, pull requests for them are still welcome.
+
+| Minecraft version | Channel   | Status                             |
+|-------------------|-----------|------------------------------------|
+| 26.1.x            | 🟢 Latest | All new features and bugfixes.     |
+| 1.21.1            | 🟡️ LTS   | Bugfixes and non-breaking updates. |
+| 1.20.1            | 🟡️ LTS   | Bugfixes and non-breaking updates. |
+| Other             | 🔴 EOL    | Unsupported                        |
+
+## Contributing
 
 Contributions are welcome! If you're willing to help out with code, art or localization, feel free to submit a
 Pull Request or get in touch with us on Discord if you have any questions.
 
-### Credits
+## Credits
 
-Block highlighting render code - [DarkKronicle's BetterBlockOutline renderer](https://github.com/DarkKronicle/BetterBlockOutline)
+Block highlighting render
+code - [DarkKronicle's BetterBlockOutline renderer](https://github.com/DarkKronicle/BetterBlockOutline)
 
-#### Past Developers
+### Past Developers
 
 **Project Lead Developer** - Calclavia  
 **Code** - Thutmose, Briman  
