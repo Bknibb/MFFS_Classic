@@ -74,6 +74,7 @@ public class FortronStorageImpl implements FortronStorage {
     @Override
     public void deserialize(ValueInput valueInput) {
         valueInput.child("fortronTank").ifPresent(this.fortronTank::deserialize);
+        this.frequency = valueInput.getIntOr("frequency", 0);
     }
 
     @Override
