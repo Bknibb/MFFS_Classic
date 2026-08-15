@@ -3,9 +3,9 @@
 This project is a Minecraft mod titled **Modular Force Field System (MFFS) Classic**
 
 ## Project Stack
-- **Minecraft Version:** 1.21.1
-- **Mod Loader:** NeoForge 21.1.241
-- **Java Version:** 21
+- **Minecraft Version:** 26.1.2
+- **Mod Loader:** NeoForge 26.1.2.82
+- **Java Version:** 25 (Microsoft OpenJDK recommended for consistency with Minecraft Launcher)
 - **Build System:** Gradle (Kotlin DSL)
 - **Mod ID:** `mffs`
 - **Main Package:** `dev.su5ed.mffs`
@@ -60,4 +60,4 @@ This project is a Minecraft mod titled **Modular Force Field System (MFFS) Class
 ## Common Pitfalls
 - **Sides:** Always be mindful of Client vs. Server code. Use `@EventBusSubscriber(value = Dist.CLIENT)` for client-only event handlers.
 - **Resource Names:** Always use the `mffs` namespace.
-- **NeoForge API:** This project uses NeoForge, not legacy Forge. Refer to NeoForge documentation for 1.21.1.
+- **NeoForge API:** This project uses NeoForge, not legacy Forge. Refer to NeoForge documentation for 1.21.2.
