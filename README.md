@@ -56,6 +56,35 @@ versions will not receive further updates from us maintainers, pull requests for
 Contributions are welcome! If you're willing to help out with code, art or localization, feel free to submit a
 Pull Request or get in touch with us on Discord if you have any questions.
 
+### Pull Request Rules
+
+* Credit all involved parties properly (yourself, anyone helping, artists, and AI tooling)
+* Purely AI pull requests will be rejected, failure to note AI usage will be rejected
+* All non-code assets have to contain a chain of custody for who created the asset and how it was sourced
+* Translations need to be human made and come from someone who understand the language(s) well
+
+## AI Usage
+
+In general we prefer AI usage to remain limited but understand tooling usefulness. 
+
+### Before Using AI
+
+* Talk to the team
+* Limit to small fixes/adjustments
+* Credit the AI/Tooling in commit co-author
+* Document AI code vs self code
+* non-code assets will be rejected if AI touched
+* changes still need human tested and confirmed
+
+### AI Agents
+
+This repository includes an [AGENTS.md](./AGENTS.md) file containing project context, technical specifications, and development guidelines tailored for AI assistants (like Claude, Copilot, or Junie).
+
+### Exceptions
+
+* 1.12.2 - has permission to be fully AI maintained as a backport
+* Unsupported versions have permission to be maintained by AI tooling
+
 ## Credits
 
 Block highlighting render
