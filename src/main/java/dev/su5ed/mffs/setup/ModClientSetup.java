@@ -146,7 +146,7 @@ public final class ModClientSetup {
                 if (camo != null && !camo.is(ModBlocks.FORCE_FIELD)) {
                     BlockTintSource source = Minecraft.getInstance().getBlockColors().getTintSource(camo, 0);
                     if (source != null) {
-                        return source.colorInWorld(state, level, pos);
+                        return source.colorInWorld(camo, level, pos);
                     }
                 }
             }
