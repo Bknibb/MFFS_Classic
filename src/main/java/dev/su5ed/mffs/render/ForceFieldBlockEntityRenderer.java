@@ -49,6 +49,6 @@ public class ForceFieldBlockEntityRenderer implements BlockEntityRenderer<ForceF
 
     @Override
     public boolean shouldRender(ForceFieldBlockEntity blockEntity, Vec3 cameraPos) {
-        return blockEntity.getCamouflage() != null && blockEntity.getCamouflage().getBlock() instanceof EntityBlock;
+        return blockEntity.getCamouflage() != null && blockEntity.getCamouflage().getBlock() instanceof EntityBlock && BlockEntityRenderer.super.shouldRender(blockEntity, cameraPos);
     }
 }
