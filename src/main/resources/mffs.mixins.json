@@ -9,7 +9,7 @@
       "ServerExplosionMixin"
   ],
   "client": [
-      "BlockEntityRenderDispatcherMixin"
+      "SectionCompilerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
